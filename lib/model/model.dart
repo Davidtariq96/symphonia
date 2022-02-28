@@ -3,7 +3,7 @@ class Model {
   late String symbol;
   late String name;
   late String image;
-  late int currentPrice;
+  late num currentPrice;
   // late int marketCap;
   // late int marketCapRank;
   // late int fullyDilutedValuation;

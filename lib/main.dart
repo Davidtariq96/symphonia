@@ -26,9 +26,9 @@ class MyApp extends StatelessWidget {
           showSelectedLabels: false,
           showUnselectedLabels: false,
           items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.map), label: "home"),
+            BottomNavigationBarItem(icon: Icon(Icons.home_work), label: "home"),
             BottomNavigationBarItem(
-                icon: Icon(Icons.network_locked), label: "home"),
+                icon: Icon(Icons.web_rounded), label: "home"),
             BottomNavigationBarItem(
                 icon: Icon(Icons.notifications), label: "home"),
             BottomNavigationBarItem(icon: Icon(Icons.person), label: "home")

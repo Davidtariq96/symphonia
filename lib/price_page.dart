@@ -10,6 +10,7 @@ class PricePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey.shade200,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -19,7 +20,7 @@ class PricePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Text(
-                    "Crypto",
+                    "Cryptos",
                     style: TextStyle(
                         color: Colors.black,
                         fontSize: 20,
@@ -29,11 +30,15 @@ class PricePage extends StatelessWidget {
                     children: const [
                       Icon(Icons.filter_list_rounded),
                       SizedBox(width: 10),
-                      Text("Prices"),
+                      Text(
+                        "Prices",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
                     ],
                   )
                 ],
               ),
+              const SizedBox(height: 20),
               Expanded(
                 child: BlocBuilder<DataBloc, List<Model>>(
                   builder: (context, remoteData) {
@@ -44,14 +49,23 @@ class PricePage extends StatelessWidget {
                     }
                     return ListView.builder(
                       itemBuilder: (context, index) => Card(
+                        color: Colors.grey.shade200,
+                        elevation: 0,
                         child: ListTile(
-                          trailing: Container(
-                            color: Colors.red,
+                          trailing: Text("\$${remoteData[index].currentPrice}"),
+                          title: Text(remoteData[index].name),
+                          leading: Container(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 5, vertical: 15),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(12),
+                            ),
                             child: Image(
+                                width: 40,
+                                height: 40,
                                 image: NetworkImage(remoteData[index].image)),
                           ),
-                          title: Text(remoteData[index].name),
-                          leading: Text("${remoteData[index].currentPrice}"),
                         ),
                       ),
                       itemCount: remoteData.length - 60,
