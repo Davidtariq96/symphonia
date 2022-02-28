@@ -54,6 +54,7 @@ class PricePage extends StatelessWidget {
                         child: ListTile(
                           trailing: Text("\$${remoteData[index].currentPrice}"),
                           title: Text(remoteData[index].name),
+                          subtitle: Text(remoteData[index].symbol),
                           leading: Container(
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 5, vertical: 15),

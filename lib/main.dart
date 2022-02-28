@@ -25,13 +25,38 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.white,
           showSelectedLabels: false,
           showUnselectedLabels: false,
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home_work), label: "home"),
-            BottomNavigationBarItem(
+          items: [
+            const BottomNavigationBarItem(
+                icon: Icon(Icons.home_work), label: "home"),
+            const BottomNavigationBarItem(
                 icon: Icon(Icons.web_rounded), label: "home"),
             BottomNavigationBarItem(
-                icon: Icon(Icons.notifications), label: "home"),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: "home")
+                icon: Stack(
+                  clipBehavior: Clip.none,
+                  children: [
+                    const Icon(Icons.notifications),
+                    Positioned(
+                      bottom: 10,
+                      left: 12,
+                      child: Container(
+                        width: 26,
+                        height: 15,
+                        decoration: BoxDecoration(
+                          color: Colors.red,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: const Text(
+                          "13",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(color: Colors.white, fontSize: 12),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+                label: "home"),
+            const BottomNavigationBarItem(
+                icon: Icon(Icons.person), label: "home")
           ],
         ),
         body: BlocProvider<DataBloc>(
