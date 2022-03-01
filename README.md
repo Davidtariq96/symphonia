@@ -1,12 +1,13 @@
 # symphonia
 
-A new Flutter project.
+Attached to this readMe file is the apk of this app
 
 ## Getting Started
 
 This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
+[app-release.apk.zip](https://github.com/Davidtariq96/symphonia/files/8161894/app-release.apk.zip)
 
 - [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
